@@ -9,17 +9,17 @@
 <http://dbpedia.org/ontology/> rdf:type owl:Ontology ;
                                 <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by-sa/3.0/> ,
                                                                         <http://www.gnu.org/copyleft/fdl.html> ;
-                                <http://purl.org/dc/terms/creator> "DBpedia Maintainers and Contributors"^^xsd:string ;
+                                <http://purl.org/dc/terms/creator> "DBpedia Maintainers and Contributors" ;
                                 <http://purl.org/dc/terms/description> """
               The DBpedia ontology provides the classes and properties used in the DBpedia data set.
             """@en ;
-                                <http://purl.org/dc/terms/issued> "2008-11-17T12:00Z"^^xsd:string ;
-                                <http://purl.org/dc/terms/modified> "2017-01-16T16:04Z"^^xsd:string ;
-                                <http://purl.org/dc/terms/publisher> "DBpedia Maintainers"^^xsd:string ;
+                                <http://purl.org/dc/terms/issued> "2008-11-17T12:00Z" ;
+                                <http://purl.org/dc/terms/modified> "2017-01-16T16:04Z" ;
+                                <http://purl.org/dc/terms/publisher> "DBpedia Maintainers" ;
                                 <http://purl.org/dc/terms/source> <http://mappings.dbpedia.org> ;
                                 <http://purl.org/dc/terms/title> "The DBpedia Ontology"@en ;
-                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "dbo"^^xsd:string ;
-                                <http://purl.org/vocab/vann/preferredNamespaceUri> "http://dbpedia.org/ontology/"^^xsd:string ;
+                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "dbo" ;
+                                <http://purl.org/vocab/vann/preferredNamespaceUri> "http://dbpedia.org/ontology/" ;
                                 rdfs:comment """
               This ontology is generated from the manually created specifications in the DBpedia Mappings
               Wiki. Each release of this ontology corresponds to a new release of the DBpedia data set which
@@ -2554,7 +2554,7 @@ xsd:time rdf:type rdfs:Datatype ;
 
 ###  http://dbpedia.org/ontology/amateurTeam
 :amateurTeam rdf:type owl:ObjectProperty ;
-             rdfs:domain :_CareerStation ;
+             rdfs:domain <http://dbpedia.org/ontology/Athlete,_CareerStation> ;
              rdfs:range :SportsTeam ;
              rdfs:label "amateur team"@en ,
                         "аматерски тим"@sr ;
@@ -4789,7 +4789,7 @@ xsd:time rdf:type rdfs:Datatype ;
 
 ###  http://dbpedia.org/ontology/cyclistGenre
 :cyclistGenre rdf:type owl:ObjectProperty ;
-              rdfs:domain :_CareerStation ;
+              rdfs:domain <http://dbpedia.org/ontology/Athlete,_CareerStation> ;
               rdfs:label "cyclist genre"@en ;
               <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:cyclistGenre> .
 
@@ -4863,7 +4863,7 @@ xsd:time rdf:type rdfs:Datatype ;
 ###  http://dbpedia.org/ontology/deanery
 :deanery rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf> ;
-         rdfs:domain :_Parish ;
+         rdfs:domain <http://dbpedia.org/ontology/Diocese,_Parish> ;
          rdfs:range :Deanery ;
          rdfs:comment "Dioceses and parishes should know which deaneries there are"@en ;
          rdfs:label "Dekanat"@de ,
@@ -5050,7 +5050,7 @@ xsd:time rdf:type rdfs:Datatype ;
 ###  http://dbpedia.org/ontology/diocese
 :diocese rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPartOf> ;
-         rdfs:domain :_Deanery ;
+         rdfs:domain <http://dbpedia.org/ontology/Parish,_Deanery> ;
          rdfs:range :Diocese ;
          rdfs:comment "A religious administrative body above the parish level"@en ;
          rdfs:label "Diözese"@de ,
@@ -7385,7 +7385,7 @@ xsd:time rdf:type rdfs:Datatype ;
 
 ###  http://dbpedia.org/ontology/leadTeam
 :leadTeam rdf:type owl:ObjectProperty ;
-          rdfs:domain :_CareerStation ;
+          rdfs:domain <http://dbpedia.org/ontology/Athlete,_CareerStation> ;
           rdfs:range :SportsTeam ;
           rdfs:label "lead team"@en ;
           <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:leadTeam> .
@@ -10026,7 +10026,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/proTeam
 :proTeam rdf:type owl:ObjectProperty ;
-         rdfs:domain :_CareerStation ;
+         rdfs:domain <http://dbpedia.org/ontology/Athlete,_CareerStation> ;
          rdfs:range :SportsTeam ;
          rdfs:label "pro team"@en ;
          <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:proTeam> .
@@ -12273,7 +12273,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 ###  http://dbpedia.org/ontology/territory
 :territory rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> ;
-           rdfs:domain :_AdministrativeRegion ;
+           rdfs:domain <http://dbpedia.org/ontology/MilitaryConflict,_AdministrativeRegion> ;
            rdfs:range :PopulatedPlace ;
            rdfs:label "Gebiet"@de ,
                       "territorio"@es ,
@@ -13924,7 +13924,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/amateurYear
 :amateurYear rdf:type owl:DatatypeProperty ;
-             rdfs:domain :_CareerStation ;
+             rdfs:domain <http://dbpedia.org/ontology/Athlete,_CareerStation> ;
              rdfs:range xsd:string ;
              rdfs:label "amateur year"@en ;
              <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:amateurYear> .
@@ -15311,7 +15311,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/casualties
 :casualties rdf:type owl:DatatypeProperty ;
-            rdfs:domain :_NaturalEvent ;
+            rdfs:domain <http://dbpedia.org/ontology/MilitaryConflict_,_NaturalEvent> ;
             rdfs:range xsd:integer ;
             rdfs:comment "Number of casualties of a MilitaryConflict or natural disaster such as an Earthquake"@en ;
             rdfs:label "Verluste"@de ,
@@ -16971,7 +16971,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/dissolutionYear
 :dissolutionYear rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :_PopulatedPlace ;
+                 rdfs:domain <http://dbpedia.org/ontology/Organisation,_PopulatedPlace> ;
                  rdfs:range xsd:gYear ;
                  rdfs:label "dissolution year"@en ;
                  <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:dissolutionYear> .
@@ -17259,7 +17259,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 ###  http://dbpedia.org/ontology/dutchMIPCode
 :dutchMIPCode rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf :Code ;
-              rdfs:domain :_Monument ;
+              rdfs:domain <http://dbpedia.org/ontology/ArchitecturalStructure,_Monument> ;
               rdfs:range xsd:string ;
               rdfs:comment "Code voor alle soorten monumenten gebezigd door het MI-project"@nl ,
                            "The Dutch MIP project was meant to take stock of all kinds of monuments"@en ;
@@ -18248,7 +18248,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/firstAscent
 :firstAscent rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Volcano ;
+             rdfs:domain <http://dbpedia.org/ontology/Mountain,Volcano> ;
              rdfs:range xsd:string ;
              rdfs:label "Erstbesteigung"@de ,
                         "first ascent"@en ;
@@ -20504,7 +20504,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/leadYear
 :leadYear rdf:type owl:DatatypeProperty ;
-          rdfs:domain :_CareerStation ;
+          rdfs:domain <http://dbpedia.org/ontology/Athlete,_CareerStation> ;
           rdfs:range xsd:string ;
           rdfs:label "lead year"@en ;
           <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:leadYear> .
@@ -21338,7 +21338,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/membershipAsOf
 :membershipAsOf rdf:type owl:DatatypeProperty ;
-                rdfs:domain :_Parish ;
+                rdfs:domain <http://dbpedia.org/ontology/Organisation,_Parish> ;
                 rdfs:range xsd:date ;
                 rdfs:label "date membership established"@en ,
                            "datum vaststellen ledental"@nl ;
@@ -24410,7 +24410,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/proYear
 :proYear rdf:type owl:DatatypeProperty ;
-         rdfs:domain :_CareerStation ;
+         rdfs:domain <http://dbpedia.org/ontology/Athlete,_CareerStation> ;
          rdfs:range xsd:string ;
          rdfs:label "pro year"@en ;
          <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:proYear> .
@@ -24838,7 +24838,7 @@ Domain is unrestricted since Organization is Agent but City is Place. Range is u
 
 ###  http://dbpedia.org/ontology/range
 :range rdf:type owl:DatatypeProperty ;
-       rdfs:domain :_Instrument ;
+       rdfs:domain <http://dbpedia.org/ontology/MeanOfTransportation_,_Instrument> ;
        rdfs:range xsd:positiveInteger ;
        rdfs:comment "Maximum distance without refueling"@en ;
        rdfs:label "bereik"@nl ,
@@ -40382,43 +40382,43 @@ Includes concentration, extermination, transit, detention, internment, (forced) 
 
 
 ###  http://dbpedia.org/ontology/ArchitecturalStructure,_Monument
-:_Monument rdf:type owl:Class .
+<http://dbpedia.org/ontology/ArchitecturalStructure,_Monument> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/Athlete,_CareerStation
-:_CareerStation rdf:type owl:Class .
+<http://dbpedia.org/ontology/Athlete,_CareerStation> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/Diocese,_Parish
-:_Parish rdf:type owl:Class .
+<http://dbpedia.org/ontology/Diocese,_Parish> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/MeanOfTransportation_,_Instrument
-:_Instrument rdf:type owl:Class .
+<http://dbpedia.org/ontology/MeanOfTransportation_,_Instrument> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/MilitaryConflict,_AdministrativeRegion
-:_AdministrativeRegion rdf:type owl:Class .
+<http://dbpedia.org/ontology/MilitaryConflict,_AdministrativeRegion> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/MilitaryConflict_,_NaturalEvent
-:_NaturalEvent rdf:type owl:Class .
+<http://dbpedia.org/ontology/MilitaryConflict_,_NaturalEvent> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/Mountain,Volcano
-:Volcano rdf:type owl:Class .
+<http://dbpedia.org/ontology/Mountain,Volcano> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/Organisation,_Parish
-:_Parish rdf:type owl:Class .
+<http://dbpedia.org/ontology/Organisation,_Parish> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/Organisation,_PopulatedPlace
-:_PopulatedPlace rdf:type owl:Class .
+<http://dbpedia.org/ontology/Organisation,_PopulatedPlace> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/Parish,_Deanery
-:_Deanery rdf:type owl:Class .
+<http://dbpedia.org/ontology/Parish,_Deanery> rdf:type owl:Class .
 
 
 ###  http://dbpedia.org/ontology/Wikidata:Q11424
@@ -42077,4 +42077,4 @@ Includes concentration, extermination, transit, detention, internment, (forced) 
          <http://www.w3.org/ns/prov#wasDerivedFrom> <http://mappings.dbpedia.org/index.php/OntologyProperty:silCode> .
 
 
-###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/
